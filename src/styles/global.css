@@ -5,13 +5,13 @@
     font-family: Geist Mono;
     font-display: swap;
     font-weight: 400;
-    src: url("/fonts/GeistMono-Regular.woff2") format("woff2");
+    src: url("/fonts/GeistMono-Regular.woff2/") format("woff2");
 }
 @font-face {
     font-family: Geist;
     font-display: swap;
     font-weight: 400 500 600;
-    src: url("/fonts/Geist[wght].woff2") format("woff2");
+    src: url("/fonts/Geist[wght].woff2/") format("woff2");
 }
 
 :root {

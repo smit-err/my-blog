@@ -4,6 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  trailingSlash: "always",
+  cacheDir: "./cachedDir",
   site: "https://blog-site-atw.pages.dev",
   vite: {
     plugins: [tailwindcss()],
