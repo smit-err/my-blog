@@ -1,16 +1,32 @@
 ---
+import BlogCard from "@component/BlogCard.astro";
+import Layout from "@layout/Layout.astro";
+import { getCollection } from "astro:content";
 
+const posts = await getCollection("blog");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+    <div
+        class="py-12 px-5 grid gap-12 md:px-6 md:max-w-[700px] lg:max-w-[1080px] lg:py-16 mx-auto lg:px-0 lg:gap-16"
+    >
+        <h1 class="text-3xl font-semibold tracking-tighter lg:text-4xl">
+            Blog posts
+        </h1>
+        <div class="grid gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
+            {
+                posts.map((post, index) => (
+                    <BlogCard
+                        id={post.id}
+                        data={post.data}
+                        isLast={index + 1 - posts.length === 0}
+                    />
+                ))
+            }
+        </div>
+        <!-- <button
+            class="inline-flex w-full justify-center py-3 rounded-xl bg-black text-white text-sm font-semibold lg:max-w-96 mx-auto"
+            >View more posts</button
+        > -->
+    </div>
+</Layout>

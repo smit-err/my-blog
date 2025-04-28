@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "./typography.css" layer(components);
+
+@font-face {
+    font-family: Geist Mono;
+    font-display: swap;
+    font-weight: 400;
+    src: url("/fonts/GeistMono-Regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: Geist;
+    font-display: swap;
+    font-weight: 400 500 600;
+    src: url("/fonts/Geist[wght].woff2") format("woff2");
+}
+
+:root {
+    --article-container-width: calc(var(--spacing) * 175);
+
+    @media (min-width: 1024px) {
+        --article-container-width: calc(var(--spacing) * 196);
+    }
+}
+
+@theme {
+    --font-sans: Geist;
+    --font-mono: Geist Mono;
+}
